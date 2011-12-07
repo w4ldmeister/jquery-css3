@@ -11,7 +11,7 @@
 				},
 				form: "linear"}
 				,opts);
-				console.log(options);
+				//console.log(options);
 			return this.each(function() {
 				var gradient="";
 				gradient += prefix+options.form+"-gradient";
