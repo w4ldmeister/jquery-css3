@@ -1,9 +1,13 @@
 (function( $ ){
-	var prefix = $.browser.webkit ? "-webkit-" : "-moz-";
+	var prefix = $.browser.webkit ? "-webkit-" : 
+			$.browser.mozilla ? "-moz-" : 
+			$.browser.opera ? "-o-" :
+			$.browser.msie ? "-ms-" :
+			"";
 	var methods = {
 		gradient: function(opts) {
 			var options = $.extend({
-				base: "center right",
+				base: "right",
 				colors: {
 					"0"  : "FFFFFF",
 					"50" : "000000",
@@ -29,11 +33,14 @@
 			})
 		}, 
 		rotate : function( opts ) { 
-			var options = opts ? opts : "30deg";
-			//console.log(options);
+			var options = $.extend({
+				base: "center center",
+				angle: "30deg"}
+				,opts);
 			return this.each(function(){
 				//console.log("rotate("+options+")");
-				$(this).css(prefix+"transform","rotate("+options+")");
+				$(this).css(prefix+"transform","rotate("+options.angle+")");
+				$(this).css(prefix+"transform-origin",options.base);
 			})
 		}
 	};
