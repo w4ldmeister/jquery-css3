@@ -1,0 +1,30 @@
+== MOTIVATION
+This library should ease the use of some CSS3 commands.
+For flexible use in games or simpler eye-catchers this file consists as a jQuery library. You will need to include jQuery 1.6, 1.7 or later.
+
+These functions are supported by latest Safari/Chrome/FF versions.
+Also this will (hopefully) availible in future Opera release and IE10.
+
+== API
+
+These functions apply to jQuery Objects:
+
+//draw a background gradient
+.css3('gradient', {
+                base: "right",
+                colors: {
+                        "0"  : "FFFFFF",
+                        "50" : "000000",
+                	"100": "FFFFFF"
+                },
+		form: "linear"
+           });    
+
+//rotate an object
+.css3('rotation', {
+                base: "center center",
+        	angle: "30deg"
+	});
+
+
+== EXAMPLES
